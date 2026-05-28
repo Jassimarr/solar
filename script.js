@@ -11,14 +11,14 @@ function applyTheme(theme) {
   });
 }
 
-const savedTheme = localStorage.getItem("js-solar-theme");
+const savedTheme = localStorage.getItem("ss-solar-theme");
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 applyTheme(savedTheme || preferredTheme);
 
 themeLogos.forEach(logo => {
   logo.addEventListener("click", () => {
     const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("js-solar-theme", nextTheme);
+    localStorage.setItem("ss-solar-theme", nextTheme);
     applyTheme(nextTheme);
   });
 });
